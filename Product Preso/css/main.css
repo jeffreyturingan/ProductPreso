@@ -294,13 +294,13 @@ a,img { border: 0;outline-width:0;}
 #ns17 i.anim { left: 100%;}
 
 #s9zoom1 { display: block; width: 320px;height: 572px;position: absolute;left: 26px;top:96px;z-index: 99 }
-#s9zoombox1 { display: none; width: 902px;height:602px;position: absolute;left: 60px;top:81px;background: url('images/s9zoom1.jpg') center center no-repeat;z-index: 100 }
+#s9zoombox1 { display: none; width: 902px;height:602px;position: absolute;left: 60px;top:81px;background: url('images/s9zoom1.png') center center no-repeat;z-index: 100 }
 
 #s9zoom2 { display: block; width: 320px;height: 572px;position: absolute;left: 351px;top:96px;z-index: 99 }
-#s9zoombox2 { display: none; width: 902px;height: 602px;position: absolute;left: 60px;top:81px;background: url('images/s9zoom2.jpg') center center no-repeat;z-index: 100 }
+#s9zoombox2 { display: none; width: 902px;height: 602px;position: absolute;left: 60px;top:81px;background: url('images/s9zoom2.png') center center no-repeat;z-index: 100 }
 
 #s9zoom3 { display: block; width: 320px;height: 572px;position: absolute;left: 675px;top:96px;z-index: 99 }
-#s9zoombox3 { display: none; width: 902px;height: 602px;position: absolute;left: 60px;top:81px;background: url('images/s9zoom3.jpg') center center no-repeat;z-index: 100 }
+#s9zoombox3 { display: none; width: 902px;height: 602px;position: absolute;left: 60px;top:81px;background: url('images/s9zoom3.png') center center no-repeat;z-index: 100 }
 
 
 /*NEW SLIDE 18*/

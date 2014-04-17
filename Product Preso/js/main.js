@@ -658,8 +658,15 @@
 		setTimeout(function() {$('#ns16 > .ns16e').addClass('anim');},3500);
 	}
 	function tons17() {
-		$('#ns17').html('<span class="ns17a"></span><span class="ns17b"></span><i></i><span id="s9zoom1"></span><span id="s9zoombox1" ></span><span id="s9zoom2"></span><span id="s9zoombox2" ></span><span id="s9zoom3"></span><span id="s9zoombox3" ></span>');
+		$('#ns17').html('<span class="ns17a"></span><span class="ns17b"></span><i></i><span id="s9zoom1"></span><span id="s9zoombox1"></span><span id="s9zoom2"></span><span id="s9zoombox2"></span><span id="s9zoom3"></span><span id="s9zoombox3"></span>');
 		setTimeout(function() {$('#ns17 > .ns17b, #ns17 > i').addClass('anim');},1000);
+		$("#s9zoom1").swipe({
+			pinchIn:function(event, direction, distance, duration, fingerCount, pinchZoom) {
+				$('#s9zoombox1').fadeIn();
+			},
+			 fingers:2,  
+	        pinchThreshold:0 
+		});
 		$("#s9zoom2").swipe({
 			pinchIn:function(event, direction, distance, duration, fingerCount, pinchZoom) {
 				$('#s9zoombox2').fadeIn();
