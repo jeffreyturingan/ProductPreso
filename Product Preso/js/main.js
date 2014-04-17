@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+$(document).ready(function() {
 	document.body.addEventListener('touchmove', function(e) {
 	  // This prevents native scrolling from happening.
 	  e.preventDefault();
@@ -7,7 +7,7 @@
 	function reset() {$('span,i,img').remove();}
 	
 	
-	var actionfinger = 2,
+	var actionfinger = 1,
 		lengthofdrag = 400;
 	
 	$('.menuBTn').live('click',function() {
