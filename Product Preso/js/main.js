@@ -4,7 +4,7 @@
 	  e.preventDefault();
 	}, false);
 	
-	function reset() {$('span,i,img').remove();}
+	function reset() {$('span,i,img,.slide > a').remove();}
 	
 	
 	var actionfinger = 1,
@@ -468,6 +468,38 @@
 			reset();
 			tons27();      
 			
+		}, swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			$(this).addClass('done');
+			$('#ns29').addClass('active');
+			reset();
+			tons29();
+		},
+		fingers:actionfinger,
+		threshold: lengthofdrag
+	});
+	$("#ns29").swipe({
+		swipeRight:function(event, direction, distance, duration, fingerCount) {
+			$(this).removeClass('active');
+			$('#ns28').removeClass('done');
+			reset();
+			tons28();      
+			
+		}, swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			$(this).addClass('done');
+			$('#ns30').addClass('active');
+			reset();
+			tons30();
+		},
+		fingers:actionfinger,
+		threshold: lengthofdrag
+	});
+	$("#ns30").swipe({
+		swipeRight:function(event, direction, distance, duration, fingerCount) {
+			$(this).removeClass('active');
+			$('#ns29').removeClass('done');
+			reset();
+			tons29();      
+			
 		},
 		fingers:actionfinger,
 		threshold: lengthofdrag
@@ -753,9 +785,31 @@
 		$('#ns28').html('<span class="ns28a"></span><i></i>');
 		setTimeout(function() {$('#ns28 > .ns28a,#ns28 > i').addClass('anim');},1000);
 	}
+	function tons29() {
+		$('#ns29').html('<a id="box1" class="playtime"></a>');
+		/*VIDEO*/
+		$('#box1').live('click',function() {
+			$('#ns29').append('<span class="videobox1"><a class="closebox1">CLOSE</a><span id="tvc1"><video id="video1" src="videos/ntvc1.mp4" /></span></span>');
+			$('#video1')[0].play();  
+		});
+		$('.closebox1').live('click',function() {
+			$('.videobox1' ).remove();
+		});
+	}
+	function tons30() {
+		$('#ns30').html('<a id="box2" class="playtime"></a>');
+		/*VIDEO*/
+		$('#box2').live('click',function() {
+			$('#ns30').append('<span class="videobox2"><a class="closebox2">CLOSE</a><span id="tvc2"><video id="video2" src="videos/ntvc2.mp4" /></span></span>');
+			$('#video2')[0].play();  
+		});
+		$('.closebox2').live('click',function() {
+			$('.videobox2' ).remove();
+		});
+	}
 	
 	function resetall() {
-		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns25,#ns26,#ns27,#ns28').removeClass('active');
+		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
 		$('span,i,img').remove();
 		$('.slide').removeClass('done');
 	}
@@ -766,76 +820,85 @@
 	$('.mtos1').live('click',function() {
 		$('#s1').addClass('active');
 		$('#s0').addClass('done');
-		$('#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tos1();
 	});
 	$('.mtos2').live('click',function() {
 		$('#s1,#ns2').addClass('active');
 		$('#s0,#s1').addClass('done');
-		$('#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tons2();
 	});
 	$('.mtos3').live('click',function() {
 		$('#s1,#ns2,#ns3').addClass('active');
 		$('#s0,#s1,#ns2').addClass('done');
-		$('#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tons3();
 	});
 	$('.mtos4').live('click',function() {
 		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7').addClass('active');
 		$('#s0,#s1,#ns2,#ns3,#ns4,#ns5,#ns6').addClass('done');
-		$('#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tons7();
 	});
 	$('.mtos5').live('click',function() {
 		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10').addClass('active');
 		$('#s0,#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9').addClass('done');
-		$('#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tons10();
 	});
 	$('.mtos6').live('click',function() {
 		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12').addClass('active');
 		$('#s0,#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11').addClass('done');
-		$('#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tons12();
 	});
 	$('.mtos7').live('click',function() {
 		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14').addClass('active');
 		$('#s0,#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13').addClass('done');
-		$('#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tons14();
 	});
 	$('.mtos8').live('click',function() {
 		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17').addClass('active');
 		$('#s0,#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16').addClass('done');
-		$('#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tons17();
 	});
 	$('.mtos9').live('click',function() {
 		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20').addClass('active');
 		$('#s0,#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19').addClass('done');
-		$('#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('active');
-		$('#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').removeClass('done');
+		$('#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('active');
+		$('#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29,#ns30').removeClass('done');
 		reset();
 		tons20();
 	});
+	$('.mtos10').live('click',function() {
+		$('#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28,#ns29').addClass('active');
+		$('#s0,#s1,#ns2,#ns3,#ns4,#ns5,#ns6,#ns7,#ns8,#ns9,#ns10,#ns11,#ns12,#ns13,#ns14,#ns15,#ns16,#ns17,#ns18,#ns19,#ns20,#ns21,#ns22,#ns23,#ns24,#ns25,#ns26,#ns27,#ns28').addClass('done');
+		$('#ns30').removeClass('active');
+		$('#ns29,#ns30').removeClass('done');
+		reset();
+		tons29();
+	});
 
+	
 	
 	
 	
