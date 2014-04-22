@@ -789,22 +789,22 @@
 		$('#ns29').html('<a id="box1" class="playtime"></a>');
 		/*VIDEO*/
 		$('#box1').live('click',function() {
-			$('#ns29').append('<span class="videobox1"><a class="closebox1">CLOSE</a><span id="tvc1"><video id="video1" src="videos/ntvc1.mp4" /></span></span>');
+			$('#ns29').html('<span class="videobox1"><a class="closebox1">CLOSE</a><span id="tvc1"><video id="video1" src="videos/ntvc1.mp4" /></span></span>');
 			$('#video1')[0].play();  
 		});
 		$('.closebox1').live('click',function() {
-			$('.videobox1' ).remove();
+			$('#ns29').html('<a id="box1" class="playtime"></a>');
 		});
 	}
 	function tons30() {
 		$('#ns30').html('<a id="box2" class="playtime"></a>');
 		/*VIDEO*/
 		$('#box2').live('click',function() {
-			$('#ns30').append('<span class="videobox2"><a class="closebox2">CLOSE</a><span id="tvc2"><video id="video2" src="videos/ntvc2.mp4" /></span></span>');
+			$('#ns30').html('<span class="videobox2"><a class="closebox2">CLOSE</a><span id="tvc2"><video id="video2" src="videos/ntvc2.mp4" /></span></span>');
 			$('#video2')[0].play();  
 		});
 		$('.closebox2').live('click',function() {
-			$('.videobox2' ).remove();
+			$('#ns30').html('<a id="box2" class="playtime"></a>');
 		});
 	}
 	
